@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModSisMed</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+    <h1>Modelado de Sistema Medico</h5>
+    
+        <div class="row" style="text-align:center;margin-left:auto;margin-right:auto;">
+            <div class="col s10 offset-s1" style="">
+                <div class="card" style="display:block">
+                    <div class="card-content">
+                        <div class="mermaid">
+                            classDiagram
+                            class Persona{
+                                -String nombre
+                                -String telefono
+                                -String correo
+                            }
+                            class Medico{
+                                -String especialidad
+                                +IsEnabe()
+                            }
+                            Persona <|-- Medico
+                            class Paciente{
+                                -String tiposeguro
+                            }
+                            Persona <|-- Paciente
+                            class HistoriaC{
+                                -int numerohc
+                                -String observaciones
+                            }
+                            HistoriaC o-- Persona : tiene
+                            class CitaM{
+                                -Date fecha
+                                -Date hora
+                                +Validar()
+                            }
+                            HistoriaC "1" --> "0..*" CitaM : Agenda
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Paulo Jara Paltin</p>
+        <p>Programa de Maestria de Ingenieria en Software</p>
+        <p>Desarrollo de Software en Ambientes Cloud</p>
+        <p>2022-Octubre</p>
+        <img src="../media/logo.png" style="height: 100px; width:300px;">
+</body>
+</html>
